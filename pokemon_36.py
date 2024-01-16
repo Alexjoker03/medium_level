@@ -45,6 +45,13 @@ print("4 >>> Eléctrico")
 #pedimos todos los datos que el usuario ingresará
 nombre_pokemon_ataca = input("¿Cuál es el nombre el pokemón que ataca >>>>>  ")
 pokemon_ataca_tipo = int(input("¿Qué tipo de pokemón es? Seleccione el número correspondiente >>>  "))
+try:
+    if pokemon_ataca_tipo <= 0 or pokemon_ataca_tipo > 4:
+        raise Exception("El tipo de pokemón que introdujiste no se reconoce")
+except Exception as error:
+    print("Elige otra vez")
+    
+
 ataque = int(input("¿Cuál es su ataque? Digite un número del 1 al 100 >>>  "))
 nombre_pokemon_defiende = input("¿Cuál es el nombre el pokemón que defiende >>>>>  ")
 pokemon_defiende_tipo = int(input("¿Qué tipo de pokemón es? Seleccione el número correspondiente >>>  "))
