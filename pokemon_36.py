@@ -34,6 +34,10 @@
 tipos_pokemon = ("agua", "fuego", "planta", "electrico")
 efectividad_ataque = (2, 1, 0.5)
 efectividad = 0
+pokemon_ataca_tipo = 0
+pokemon_defiende_tipo = 0
+ataque = 0
+defensa = 0
 
 print("ESTAS EN UNA BATALLA POKEMÓN")
 print("ESTOS SON LOS TIPOS DE POKEMÓN: ")
@@ -44,18 +48,36 @@ print("4 >>> Eléctrico")
 
 #pedimos todos los datos que el usuario ingresará
 nombre_pokemon_ataca = input("¿Cuál es el nombre el pokemón que ataca >>>>>  ")
-pokemon_ataca_tipo = int(input("¿Qué tipo de pokemón es? Seleccione el número correspondiente >>>  "))
-try:
-    if pokemon_ataca_tipo <= 0 or pokemon_ataca_tipo > 4:
-        raise Exception("El tipo de pokemón que introdujiste no se reconoce")
-except Exception as error:
-    print("Elige otra vez")
-    
 
-ataque = int(input("¿Cuál es su ataque? Digite un número del 1 al 100 >>>  "))
+#while para validar el tipo de pokemon y pedir el tipo de pokemón
+while pokemon_ataca_tipo < 1 or pokemon_ataca_tipo > 4 :
+    pokemon_ataca_tipo = int(input("¿Qué tipo de pokemón es? Seleccione el número correspondiente >>>  "))
+    if pokemon_ataca_tipo < 1 or pokemon_ataca_tipo > 4:
+        print("Esa opción no es válida, intente de nuevo ")
+
+            
+#while para validar que el ataque sea el correcto y pedir el ataque
+
+while ataque < 1 or ataque > 100: 
+    ataque = int(input("¿Cuál es su ataque? Digite un número del 1 al 100 >>>  "))
+    if ataque < 1 or ataque > 100:
+        print("El ataque de tu pokemón no está en el rango permitido, intente otra vez ")
+
 nombre_pokemon_defiende = input("¿Cuál es el nombre el pokemón que defiende >>>>>  ")
-pokemon_defiende_tipo = int(input("¿Qué tipo de pokemón es? Seleccione el número correspondiente >>>  "))
-defensa = int(input("¿Cuál es su defensa? Digite un número del 1 al 100 >>>  "))
+
+#while para validar el tipo de pokemon que defiende y pedir el tipo de pokemón
+while pokemon_defiende_tipo < 1 or pokemon_defiende_tipo > 4 :
+    pokemon_defiende_tipo = int(input("¿Qué tipo de pokemón es? Seleccione el número correspondiente >>>  "))
+    if pokemon_defiende_tipo < 1 or pokemon_defiende_tipo > 4:
+        print("Esa opción no es válida, intente de nuevo ")
+
+#while para validar que la defensa sea el correcto y pedir la defensa
+
+while defensa < 1 or defensa > 100: 
+    defensa = int(input("¿Cuál es su defensa? Digite un número del 1 al 100 >>>  "))
+    if defensa < 1 or defensa > 100:
+        print("La defensa de tu pokemón no está en el rango permitido, intenta otra vez ")
+
 
 #combinaciones para cuando ataca un tipo agua
 if pokemon_ataca_tipo == 1:
