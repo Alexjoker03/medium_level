@@ -18,3 +18,64 @@
  *     2 Pelosos empatan contra 1 Orco
  *     3 Pelosos ganan a 1 Orco
 --------------------------------------------------------------------------------"""
+"""
+razas_bondadosas = {
+    "Pelosos":1,
+    "Sureños_buenos":2,
+    "Enanos":3,
+    "Númenóreanos":4,
+    "Elfos":5
+}
+
+razas_malvadas = {
+    "Sureños_malos":2,
+    "Orcos":2,
+    "Goblins":2,
+    "Huargos":3,
+    "Trolls":5
+}
+"""
+"""
+print("Estas son las razas malvadas de Tierra Media: ")
+
+x = razas_malvadas.values()
+for i in x:
+    print(i)
+
+for i in razas_malvadas:
+    print(i)
+print("\nEstas son las razas bondadosas de Tierra Media: ")  
+for i in razas_bondadosas:
+    print(i)
+
+#creando los ejercitos.
+print("Selecciona como va a estar conformado el ejercito de las razas bondadosas: ")
+
+"""
+razas_bondadosas = ("Pelosos", "Sureños buenos", "Enanos", "Númenóreanos", "Elfos")
+razas_malvadas = ("Sureños_malos", "Orcos", "Goblins", "Huargos", "Trolls")
+numero_razas_bondadosas = []
+numero_razas_malvadas = []
+print("Estas son las RAZAS BONDADOSAS de TIERRA MEDIA: ")
+for i in razas_bondadosas:
+    print(i)
+
+print("Estas son las RAZAS MALVADAS de TIERRA MEDIA: ")
+for i in razas_malvadas:
+    print(i)
+
+print("Es hora de conformar el ejercito de las RAZAS BONDADOSAS: ")
+for i in razas_bondadosas:
+    respuesta_numero_razas_bondadosas = int(input(f"¿Cuántos {i} hay en tu ejercito >>> "))
+    numero_razas_bondadosas.append(respuesta_numero_razas_bondadosas)
+
+print("Es hora de conformar el ejercito de las RAZAS MALVADAS: ")
+for i in razas_malvadas:
+    respuesta_numero_razas_malvadas = int(input(f"¿Cuántos {i} hay en tu ejercito >>> "))
+    numero_razas_malvadas.append(respuesta_numero_razas_malvadas)
+
+for i in numero_razas_bondadosas     
+
+        
+
+
