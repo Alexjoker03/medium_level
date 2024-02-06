@@ -54,27 +54,60 @@ print("Selecciona como va a estar conformado el ejercito de las razas bondadosas
 """
 razas_bondadosas = ("Pelosos", "Sureños buenos", "Enanos", "Númenóreanos", "Elfos")
 razas_malvadas = ("Sureños_malos", "Orcos", "Goblins", "Huargos", "Trolls")
+fuerzas_razas_bondadosas = [1, 2, 3, 4, 5]
+fuerzas_razas_malvadas = [2, 2, 2, 3, 5]
 numero_razas_bondadosas = []
 numero_razas_malvadas = []
+fuerza_total_razas_bondadosas = 0
+fuerza_total_razas_malvadas = 0
 print("Estas son las RAZAS BONDADOSAS de TIERRA MEDIA: ")
 for i in razas_bondadosas:
     print(i)
 
-print("Estas son las RAZAS MALVADAS de TIERRA MEDIA: ")
+print("\nEstas son las RAZAS MALVADAS de TIERRA MEDIA: ")
 for i in razas_malvadas:
     print(i)
 
-print("Es hora de conformar el ejercito de las RAZAS BONDADOSAS: ")
+print("\nEs hora de conformar el ejercito de las RAZAS BONDADOSAS: ")
 for i in razas_bondadosas:
     respuesta_numero_razas_bondadosas = int(input(f"¿Cuántos {i} hay en tu ejercito >>> "))
     numero_razas_bondadosas.append(respuesta_numero_razas_bondadosas)
 
-print("Es hora de conformar el ejercito de las RAZAS MALVADAS: ")
+print("\nEs hora de conformar el ejercito de las RAZAS MALVADAS: ")
 for i in razas_malvadas:
     respuesta_numero_razas_malvadas = int(input(f"¿Cuántos {i} hay en tu ejercito >>> "))
     numero_razas_malvadas.append(respuesta_numero_razas_malvadas)
 
-for i in numero_razas_bondadosas     
+
+n = -1
+for i in numero_razas_bondadosas:
+    n = n + 1
+    print(fuerza_total_razas_bondadosas)
+    fuerza_total_razas_bondadosas = fuerza_total_razas_bondadosas + (i * fuerzas_razas_bondadosas[n])
+
+
+x = -1
+for i in numero_razas_malvadas:
+    x = x + 1
+    print(fuerza_total_razas_malvadas)
+    fuerza_total_razas_malvadas = fuerza_total_razas_malvadas + (i * fuerzas_razas_malvadas[x])
+
+print(f"Esta es la fuerza total del ejercito bondadoso {fuerza_total_razas_bondadosas} Power Points ")
+print(f"Esta es la fuerza total del ejercito malvado {fuerza_total_razas_malvadas} Power Points")
+
+if fuerza_total_razas_bondadosas > fuerza_total_razas_malvadas:
+    print("GANA EL BIEN")
+
+elif fuerza_total_razas_bondadosas < fuerza_total_razas_malvadas:
+    print("GANA EL MAL")
+
+else:
+    print("ES UN EMPATE, HABRÁ OTRA BATALLA ALGÚN DÍA")
+
+    
+    
+     
+
 
         
 
