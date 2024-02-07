@@ -34,22 +34,30 @@ razas_malvadas = {
     "Huargos":3,
     "Trolls":5
 }
+
+numero_razas_bondadosas = []
 """
 """
-print("Estas son las razas malvadas de Tierra Media: ")
 
-x = razas_malvadas.values()
-for i in x:
-    print(i)
-
+print("\nEstas son las razas malvadas de Tierra Media: ")
 for i in razas_malvadas:
     print(i)
+
 print("\nEstas son las razas bondadosas de Tierra Media: ")  
 for i in razas_bondadosas:
     print(i)
 
 #creando los ejercitos.
-print("Selecciona como va a estar conformado el ejercito de las razas bondadosas: ")
+print("\nEs hora de conformar el ejercito de las RAZAS BONDADOSAS: ")
+for i in razas_bondadosas:
+    respuesta_numero_razas_bondadosas = int(input(f"¿Cuántos {i} hay en tu ejercito >>> "))
+    numero_razas_bondadosas.append(respuesta_numero_razas_bondadosas)
+
+#obteniendo cual es el poder del ejercito bondadoso
+n = -1
+for i in numero_razas_bondadosas:
+    n = n + 1
+    fuerza_total_razas_bondadosas = fuerza_total_razas_bondadosas + (i * fuerzas_razas_bondadosas[n])
 
 """
 razas_bondadosas = ("Pelosos", "Sureños buenos", "Enanos", "Númenóreanos", "Elfos")
@@ -60,6 +68,9 @@ numero_razas_bondadosas = []
 numero_razas_malvadas = []
 fuerza_total_razas_bondadosas = 0
 fuerza_total_razas_malvadas = 0
+
+
+
 print("Estas son las RAZAS BONDADOSAS de TIERRA MEDIA: ")
 for i in razas_bondadosas:
     print(i)
@@ -69,31 +80,44 @@ for i in razas_malvadas:
     print(i)
 
 print("\nEs hora de conformar el ejercito de las RAZAS BONDADOSAS: ")
+
+
 for i in razas_bondadosas:
-    respuesta_numero_razas_bondadosas = int(input(f"¿Cuántos {i} hay en tu ejercito >>> "))
-    numero_razas_bondadosas.append(respuesta_numero_razas_bondadosas)
+    try:
+        respuesta_numero_razas_bondadosas = int(input(f"¿Cuántos {i} hay en tu ejercito >>> "))
+    except ValueError:
+        print("La opción que ingresó no es un número =( simplemente ignoraré su respuesta")
+        respuesta_numero_razas_bondadosas = 0
+        numero_razas_bondadosas.append(respuesta_numero_razas_bondadosas)
+    else:
+        numero_razas_bondadosas.append(respuesta_numero_razas_bondadosas)
+
 
 print("\nEs hora de conformar el ejercito de las RAZAS MALVADAS: ")
 for i in razas_malvadas:
-    respuesta_numero_razas_malvadas = int(input(f"¿Cuántos {i} hay en tu ejercito >>> "))
-    numero_razas_malvadas.append(respuesta_numero_razas_malvadas)
+    try:
+        respuesta_numero_razas_malvadas = int(input(f"¿Cuántos {i} hay en tu ejercito >>> "))
+    except ValueError:
+        print("La opción que ingresó no es un número =(, simplemente ignoraré su respuesta")
+        respuesta_numero_razas_malvadas = 0
+        numero_razas_malvadas.append(respuesta_numero_razas_malvadas)
+    else:    
+        numero_razas_malvadas.append(respuesta_numero_razas_malvadas)
 
 
 n = -1
 for i in numero_razas_bondadosas:
     n = n + 1
-    print(fuerza_total_razas_bondadosas)
     fuerza_total_razas_bondadosas = fuerza_total_razas_bondadosas + (i * fuerzas_razas_bondadosas[n])
 
 
 x = -1
 for i in numero_razas_malvadas:
     x = x + 1
-    print(fuerza_total_razas_malvadas)
     fuerza_total_razas_malvadas = fuerza_total_razas_malvadas + (i * fuerzas_razas_malvadas[x])
 
 print(f"Esta es la fuerza total del ejercito bondadoso {fuerza_total_razas_bondadosas} Power Points ")
-print(f"Esta es la fuerza total del ejercito malvado {fuerza_total_razas_malvadas} Power Points")
+print(f"Esta es la fuerza total del ejercito malvado {fuerza_total_razas_malvadas} Power Points \n")
 
 if fuerza_total_razas_bondadosas > fuerza_total_razas_malvadas:
     print("GANA EL BIEN")
