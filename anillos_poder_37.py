@@ -101,8 +101,16 @@ for i in razas_malvadas:
         print("La opción que ingresó no es un número =(, simplemente ignoraré su respuesta")
         respuesta_numero_razas_malvadas = 0
         numero_razas_malvadas.append(respuesta_numero_razas_malvadas)
-    else:    
-        numero_razas_malvadas.append(respuesta_numero_razas_malvadas)
+    else:
+        if respuesta_numero_razas_malvadas <= 0:
+            print("No puedes tener elementos de tu ejercito en números negativos, simplemente ignoraré tu respuesta ")
+            respuesta_numero_razas_malvadas = 0
+            numero_razas_malvadas.append(respuesta_numero_razas_malvadas)
+        else:
+            numero_razas_malvadas.append(respuesta_numero_razas_malvadas)
+
+
+       
 
 
 n = -1
