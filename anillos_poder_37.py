@@ -18,48 +18,7 @@
  *     2 Pelosos empatan contra 1 Orco
  *     3 Pelosos ganan a 1 Orco
 --------------------------------------------------------------------------------"""
-"""
-razas_bondadosas = {
-    "Pelosos":1,
-    "Sureños_buenos":2,
-    "Enanos":3,
-    "Númenóreanos":4,
-    "Elfos":5
-}
 
-razas_malvadas = {
-    "Sureños_malos":2,
-    "Orcos":2,
-    "Goblins":2,
-    "Huargos":3,
-    "Trolls":5
-}
-
-numero_razas_bondadosas = []
-"""
-"""
-
-print("\nEstas son las razas malvadas de Tierra Media: ")
-for i in razas_malvadas:
-    print(i)
-
-print("\nEstas son las razas bondadosas de Tierra Media: ")  
-for i in razas_bondadosas:
-    print(i)
-
-#creando los ejercitos.
-print("\nEs hora de conformar el ejercito de las RAZAS BONDADOSAS: ")
-for i in razas_bondadosas:
-    respuesta_numero_razas_bondadosas = int(input(f"¿Cuántos {i} hay en tu ejercito >>> "))
-    numero_razas_bondadosas.append(respuesta_numero_razas_bondadosas)
-
-#obteniendo cual es el poder del ejercito bondadoso
-n = -1
-for i in numero_razas_bondadosas:
-    n = n + 1
-    fuerza_total_razas_bondadosas = fuerza_total_razas_bondadosas + (i * fuerzas_razas_bondadosas[n])
-
-"""
 razas_bondadosas = ("Pelosos", "Sureños buenos", "Enanos", "Númenóreanos", "Elfos")
 razas_malvadas = ("Sureños_malos", "Orcos", "Goblins", "Huargos", "Trolls")
 fuerzas_razas_bondadosas = [1, 2, 3, 4, 5]
