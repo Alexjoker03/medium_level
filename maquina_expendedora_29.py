@@ -15,12 +15,50 @@
 --------------------------------------------------------------------------"""
 flag = True
 introducir_dinero = 0
-productos = ("Toallas femeninas", "Doritos diablo", "Jumex", "Chokis con extra chocolate", "Cacahuates japoneses")
+productos = ("1. Paketaxo ", "2. Doritos diablo ", "3. Jumex ", "4. Chokis con extra chocolate ", "5. Cacahuates japoneses ", "\n9. Introducir más dinero ")
+productos_string = ''.join(productos)
+precio = (60, 20, 20, 25, 10)
 dinero_disponible = []
+dinero_disponible_int = 0
+cambio = 0
 
 while flag == True:
-    introducir_dinero = int(input("Por favor introduzca su dinero "))
-    dinero_disponible.append(introducir_dinero)
-    mas_dinero = input("¿Deseas introducir más dinero o quieres elegir tu producto?") 
+    print(productos_string)
+    eleccion = int(input("Si desea elegir su producto digite la opciòn deseada >>> \nSi desea ingresar dinero presione el número 9 >>> "))
+    
+    if eleccion == 9:
+        introducir_dinero = int(input("Por favor introduzca dinero >>> "))
+        dinero_disponible.append(introducir_dinero)
+        flag = True
+    elif eleccion >= 1 and eleccion <= 5:
+            #Pasamos el dinero disponible de una lista con los valores introducidos a un solo número entero
+            for i in dinero_disponible:
+                 dinero_disponible_int = dinero_disponible_int + i
+            
+            #Opción donde la cantidad de dinero es igual al precio del producto
+            if dinero_disponible_int == precio[eleccion - 1]:
+                print(f"Gracias por tu compra disfruta tu {productos[eleccion - 1]} ")
+                flag = False
+            
+            #Opción donde la cantidad de dinero es insuficiente
+            elif dinero_disponible_int < precio[eleccion - 1]:
+                 print("Dinero insuficiente para comprar ese producto ")
+                 print(f"Te regreso tu dinero {dinero_disponible} ")
+                 flag = False
+            #Opción donde la cantidad de dinero es mayor a lo que cuesta el producto
+            elif dinero_disponible_int > precio[eleccion - 1]:
+                 cambio = dinero_disponible_int - precio[eleccion - 1]
+                 print(f"Gracias por tu compra disfruta tu {productos[eleccion - 1]} ")
+                 print(f"Este es tu cambio {cambio}")
+                 flag = False
 
-eleccion = int(input("Elija su producto"))
+                 
+    elif eleccion < 1 or eleccion > 5:
+         print("Opción no válida, solo tenemos opciones del 1 al 5")
+         flag == True
+
+
+
+     
+
+
