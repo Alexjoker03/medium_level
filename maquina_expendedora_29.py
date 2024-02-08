@@ -20,8 +20,14 @@ productos_string = ''.join(productos)
 precio = (60, 20, 20, 25, 10)
 dinero_disponible = []
 dinero_disponible_int = 0
-cambio = 0
 
+
+
+def cambio():
+    dinero_a_regresar = dinero_disponible_int - precio[eleccion - 1]
+    print(f"Te regreso tu cambio {dinero_a_regresar}")
+    
+     
 while flag == True:
     print(productos_string)
     eleccion = int(input("Si desea elegir su producto digite la opciòn deseada >>> \nSi desea ingresar dinero presione el número 9 >>> "))
@@ -47,15 +53,20 @@ while flag == True:
                  flag = False
             #Opción donde la cantidad de dinero es mayor a lo que cuesta el producto
             elif dinero_disponible_int > precio[eleccion - 1]:
-                 cambio = dinero_disponible_int - precio[eleccion - 1]
                  print(f"Gracias por tu compra disfruta tu {productos[eleccion - 1]} ")
-                 print(f"Este es tu cambio {cambio}")
+                 cambio()
                  flag = False
 
-                 
-    elif eleccion < 1 or eleccion > 5:
+    #Si la opción es incorrecta y no ha introducido dinero             
+    elif (eleccion < 1 or eleccion > 5) and dinero_disponible_int == 0:
          print("Opción no válida, solo tenemos opciones del 1 al 5")
          flag == True
+        
+    #si la opción es incorrecta y ya se introdujo dinero
+    elif (eleccion < 1 or eleccion > 5) and dinero_disponible_int > 0:  
+         print("Opción no válida, solo tenemos opciones del 1 al 5")
+         cambio()
+         flag == False
 
 
 
